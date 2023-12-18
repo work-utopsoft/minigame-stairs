@@ -6,9 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameStart.unity
-    guid: 00cfab1f2e89db24c8326eb7d10ec752
+    path: Assets/Scenes/GameStart_Landscape.unity
+    guid: 3741de62fca236f4e8ed348bb4188e53
   - enabled: 1
     path: Assets/Scenes/Character.unity
     guid: 1dcde3d4145bce44085dac08331ac2b5
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

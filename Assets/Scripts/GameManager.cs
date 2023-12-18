@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour {
     public Player player;
     public ObjectManager objectManager;
@@ -32,7 +33,6 @@ public class GameManager : MonoBehaviour {
     enum State { start, leftDir, rightDir }
     State state = State.start;
 
-
     void Awake() {
         players[selectedIndex].SetActive(true);
         player = players[selectedIndex].GetComponent<Player>();
@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour {
         UI[0].SetActive(dslManager.IsRetry());
         UI[1].SetActive(!dslManager.IsRetry());        
     }
-
 
     //Initially Spawn The Stairs
     void StairsInit() {
@@ -75,9 +74,6 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-
-
-
     //Spawn The Stairs At The Random Location
     void SpawnStair(int num) {
         IsChangeDir[num + 1 == 20 ? 0 : num + 1] = false;
@@ -99,8 +95,6 @@ public class GameManager : MonoBehaviour {
             IsChangeDir[num+1 == 20? 0 : num+1] = true;
         }
     }
-
-
 
     //Stairs Moving Along The Direction       
     public void StairMove(int stairIndex, bool isChange, bool isleft) {
@@ -128,7 +122,6 @@ public class GameManager : MonoBehaviour {
         backGround.transform.position += backGround.transform.position.y < -14f ?
             new Vector3(0, 4.7f, 0) : new Vector3(0, -0.05f, 0);
     }
-
 
     //#.Gauge
     void GaugeReduce() {
@@ -280,7 +273,7 @@ public class GameManager : MonoBehaviour {
 
     void Vibration()
     {
-        Handheld.Vibrate();
+        //Handheld.Vibrate();
         sound[0].playOnAwake = false;
     }
 
